@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "faceApp"
+    }
+  },
+  "defaultProject": "faceApp",
+  "cli": {
+    "analytics": "a031999c-95bd-4268-aea7-b5781425651e"
+  }
 }

@@ -1,20 +1,26 @@
-<div class="div wrapper">
+<div class="wrapper">
 
     <div class="header">
-
         <div class="in-header">
+            <div>
+                <i class="uil uil-video"></i>
+            </div>
 
-            <div><i class="uil uil-video"></i></div>
-            <div class="title">Reconocimiento facial con <b>Angular</b></div>
+            <div class="title">
+                Reconocimiento facial <b>ANGULAR 2021</b>
+            </div>
         </div>
         <div>
-            <a href="https://github.com/anekc/FaceRecognition" target="_blank"><i class="uil uil-github"></i></a>
+            <a href="https://github.com/leifermendez" target="_blank">
+                <i class="uil uil-github"></i>
+            </a>
         </div>
     </div>
 
     <div class="block-main">
         <div class="cam">
-            <app-video-player [stream]="currentStream" [width]="dimensionVideo.width" [height]="dimensionVideo.height"></app-video-player>
+            <app-video-player [width]="dimensionVideo.width" [height]="dimensionVideo.height" [stream]="currentStream">
+            </app-video-player>
         </div>
         <div class=" sidebar ">
             <div class="zone-body ">

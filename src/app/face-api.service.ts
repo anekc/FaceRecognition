@@ -1,33 +1,30 @@
-import { Injectable } from '@angular/core';
-import { EventEmitter } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import * as faceapi from 'face-api.js';
-import { ssdMobilenetv1 } from 'face-api.js';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FaceApiService {
+  public globalFace: any;
 
-  public globalFace:any;
-
-  private models4Load = [
+  private modelsForLoad = [
     faceapi.nets.ssdMobilenetv1.loadFromUri('/assets/models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('/assets/models'),
     faceapi.nets.faceRecognitionNet.loadFromUri('/assets/models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('/assets/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/assets/models')
   ];
 
- public cbModels: EventEmitter<any> = new EventEmitter();
+  cbModels: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() { 
+  constructor() {
     this.globalFace = faceapi;
     this.loadModels();
   }
 
-  public loadModels(){
-    Promise.all(this.models4Load).then(res => {
-      console.log('modelos cargados');
+  public loadModels = () => {
+    Promise.all(this.modelsForLoad).then(() => {
+      console.log('Modelos cargados!!');
       this.cbModels.emit(true);
-    })
-  }
+    });
+  };
 }

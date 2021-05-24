@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { VideoPlayerServiceService } from './video-player-service.service';
+import { VideoPlayerService } from './video-player.service';
 
 describe('VideoPlayerServiceService', () => {
-  let service: VideoPlayerServiceService;
+  let service: VideoPlayerService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(VideoPlayerServiceService);
+    service = TestBed.inject(VideoPlayerService);
   });
 
   it('should be created', () => {

@@ -18,7 +18,7 @@ export class VideoPlayerComponent implements OnInit, OnDestroy {
   filters = [
     {
       type: 'question',
-      question: ''
+      question: ' '
     }
     // {
     //   type: 'image',
@@ -54,7 +54,7 @@ export class VideoPlayerComponent implements OnInit, OnDestroy {
         resizedDetections = resizedDetections[0] || null;
         // :TODO Aqui pintamos! dibujamos!
         if (resizedDetections) {
-        return  this.drawFace(resizedDetections, displaySize, eyes);
+          this.drawFace(resizedDetections, displaySize, eyes);
         }
       });
 
@@ -64,8 +64,8 @@ export class VideoPlayerComponent implements OnInit, OnDestroy {
   drawFace = (resizedDetections, displaySize, eyes) => {
     const {globalFace} = this.faceApiService;
     this.overCanvas.getContext('2d').clearRect(0, 0, displaySize.width, displaySize.height);
-    globalFace.draw.drawDetections(this.overCanvas, resizedDetections);
-    // globalFace.draw.drawFaceLandmarks(this.overCanvas, resizedDetections);
+    //globalFace.draw.drawDetections(this.overCanvas, resizedDetections);
+    globalFace.draw.drawFaceLandmarks(this.overCanvas, resizedDetections);
 
     const scale = this.width / displaySize.width;
     console.log(scale);
